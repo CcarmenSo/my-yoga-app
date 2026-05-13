@@ -1,21 +1,31 @@
-<!-- <div class="home">
-  <div class="home__left">
-    @for(name of arrayCategories(); track $index){
-    <div class="home__left__item">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-      <label class="form-check-label" for="flexCheckChecked">
-        {{name}}
-      </label>
+<div class="flex w-full min-h-screen gap-10">
+    <div class="w-[20%] mr-10" >
+    <app-side-panel [arrayCategories]="arrayCategoriesName()" (selectedCategoryChange)="selectedCategoryChange($event)"></app-side-panel>
+    </div>
+
+    <div class="w-[80%] p-4 rounded-lg ml-10">
+        @if(isLoading()){
+        <div class = "border border-gray-500  flex flex-col justify-center items-center gap-2 align-middle h-[100%] rounded-lg">
+            <span class = "text-xs text-taupe-600">Loading...</span>
+        <div class ="flex gap-2">
+        <span class="loading loading-dots loading-xl bg-secondary"></span>
+        <span class="loading loading-dots loading-xl bg-primary"></span>
+        <span class="loading loading-dots loading-xl bg-accent"></span>
+        </div>
+        </div>
+        }@else{
+        <div class="grid grid-cols-4  rounded-lg gap-2 ">
+            @for(pose of categoryPoses(); track $index){
+            <app-asana-card [pose]="pose"></app-asana-card>
+            }
+    
+        </div>
+    
+        }
+    
+    </div>
     </div>
 
 
-    }
-  </div>
-  <div class="home__content">
 
-
-
-  </div>
-
-</div> -->
-<p>Categorias</p>
+    

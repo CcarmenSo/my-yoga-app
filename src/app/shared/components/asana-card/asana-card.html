@@ -1,0 +1,15 @@
+<div class="card bg-taupe-300 w-55 shadow-lg p-4 mt-10  transition-all duration-500 ease-in-out
+         hover:scale-105 hover:bg-rose-100">
+  <figure>
+    <img
+      [src]="pose()?.url_svg" 
+      [alt]="pose()?.english_name"
+       />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title text-sm justify-center">{{pose()?.english_name}}</h2>
+    <div class="card-actions justify-center">
+      <!-- <button class="btn btn-primary">See more...</button> -->
+    </div>
+  </div>
+</div>
